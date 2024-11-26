@@ -32,9 +32,9 @@ public class GPTArrayQuestions {
 //        ReverseAnArray();
   //      secondLargestElement();
  //       checkSortedArray();
-        sumOfElementsInArray();
-        countOccurenceOfElements();
-        mergeTwoArrays();
+       //sumOfElementsInArray();
+  //      countOccurenceOfElements();
+   //     mergeTwoArrays();
         findIndexOfGivenElement();
         System.out.println();
         System.out.println(GREEN + "Intermediate Level:");
@@ -90,81 +90,13 @@ public class GPTArrayQuestions {
 
 //###########################################################################################################################################################################################################################################
 
-    static void sumOfElementsInArray() {
-        System.out.println(WHITE + "************************************************************************");
-        System.out.println(BLUE + "Sum of Array Elements");
-        Integer[] arr = {2, 4, 6, 8, 10};
-
-        int sum = 0;
-
-        for (int i = 0; i < arr.length; i++) {
-
-            sum = arr[i] + sum;
-        }
-        System.out.println(CYAN + " The sum of Provided array is => " + YELLOW + "" + sum);
-        System.out.println(MAGENTA + "Streams Way to do it ");
-        int sum2 = Arrays.stream(arr).mapToInt(Integer::intValue).sum();
-        System.out.println(MAGENTA + " The sum of Provided array using streams is => " + YELLOW + "" + sum2);
-        System.out.println(WHITE + "************************************************************************");
-        System.out.println();
-    }
-
-//###########################################################################################################################################################################################################################################
-
-    static void countOccurenceOfElements() {
-        System.out.println(WHITE + "************************************************************************");
-        System.out.println(BLUE + "Count Occurrences of an Element");
-        Integer[] arr = {2, 4, 6, 8, 10, 8};
-
-        int count = 0;
-        int element = 8;
-
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i].equals(element)) {
-                count++;
-            }
-        }
-        System.out.println(CYAN + " The count of Provided element " + element + " in array is => " + YELLOW + "" + count);
-
-        System.out.println(WHITE + "************************************************************************");
-        System.out.println();
-    }
 
 //###########################################################################################################################################################################################################################################
 
 
-    static void mergeTwoArrays() {
-        System.out.println(WHITE + "************************************************************************");
-        System.out.println(BLUE + "Merge Two Arrays");
-        Integer[] arr = {1, 3, 5};
-        Integer[] arr1 = {2, 4, 6};
-        Integer[] arr2 = new Integer[arr.length + arr1.length];
 
-        for (int i = 0; i < arr.length; i++) {
-            arr2[i] = arr[i];
-        }
-        for (int j = 0; j < arr1.length; j++) {
-            arr2[arr.length + j] = arr1[j];
-        }
+//###########################################################################################################################################################################################################################################
 
-        //Now we got the values not let's sort this array
-
-//        {4,8,7}
-        int temp = 0;
-        for (int i = 0; i < arr2.length - 1; i++) {
-            for (int j = 1; j < arr2.length - i; j++) {
-                if (arr2[j] < arr2[j - 1]) {
-                    temp = arr2[j - 1];
-                    arr2[j - 1] = arr2[j];
-                    arr2[j] = temp;
-                }
-            }
-        }
-        Utils.PrintArray(arr2, BLUE);
-
-        System.out.println(WHITE + "************************************************************************");
-        System.out.println();
-    }
 
 //###########################################################################################################################################################################################################################################
 
