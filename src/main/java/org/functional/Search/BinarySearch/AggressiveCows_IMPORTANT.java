@@ -22,6 +22,8 @@ public class AggressiveCows_IMPORTANT {
         // Calculate and display the result using linear search solution
         System.out.println(TerminalColors.GREEN + "Maximum distance for the cows can be (Linear search solution) => " +
                 TerminalColors.BLUE + "" + LinerSolution(arr, countOfCows));
+
+        // Calculate and display the result using binary search solution
         System.out.println(TerminalColors.GREEN + "Maximum distance for the cows can be (Binary search solution) => " +
                 TerminalColors.BLUE + "" + BinarySolution(arr, countOfCows));
 
@@ -46,7 +48,7 @@ public class AggressiveCows_IMPORTANT {
         for (int i = 0; i < max - min; i++) {
             // Check if we can place cows with a distance of 'i'
             if (canWePlace(arr, i, countOfCows)) {
-                continue;
+                continue;  // If possible, continue to the next distance
             } else {
                 // If cows can't be placed with distance 'i', return the previous distance
                 return i - 1;
@@ -55,23 +57,33 @@ public class AggressiveCows_IMPORTANT {
         return -1; // Return -1 if no valid distance is found
     }
 
-    static int BinarySolution(int arr[], int countOfCows){
+    /**
+     * Finds the maximum possible minimum distance using a binary search approach.
+     *
+     * @param arr          Array of stall positions.
+     * @param countOfCows  Number of cows to be placed.
+     * @return             Maximum possible minimum distance.
+     */
+    static int BinarySolution(int arr[], int countOfCows) {
+        // Sort the stall positions to ensure they are in increasing order
         Arrays.sort(arr);
-        int left = 0;
-        int right = arr[arr.length-1] - arr[0];
 
-        while(left <= right){
+        // Initialize the binary search range
+        int left = 0;  // Minimum possible distance
+        int right = arr[arr.length - 1] - arr[0];  // Maximum possible distance
 
-            int mid = (left+right)/2;
+        // Perform binary search
+        while (left <= right) {
+            int mid = (left + right) / 2;  // Calculate the mid-point of the range
 
-            if(canWePlace(arr,mid,countOfCows) ){
-                left = mid+1;
-            }else{
-                right = mid-1;
+            // Check if we can place cows with a minimum distance of 'mid'
+            if (canWePlace(arr, mid, countOfCows)) {
+                left = mid + 1;  // Increase the lower bound of the range
+            } else {
+                right = mid - 1;  // Decrease the upper bound of the range
             }
-
         }
-return right;
+        return right;  // The largest valid distance found
     }
 
     /**
@@ -95,8 +107,11 @@ return right;
             }
         }
 
-        // Return true if we were able to place all cows
-        return numberOfCows >= countOfCows;
+        if(numberOfCows >= countOfCows){
+            return true;
+        }else{
+            return false;
+        }
     }
 
     /**
