@@ -7,20 +7,15 @@ public class UpperBound {
 
         int k = 5;
         System.out.println("The lower bound of k = " + k + "  is => " + upperBound(arr, k, arr.length));
-
     }
 
     public static int upperBound(int []arr, int x, int n){
         // Write your code here.
         int left = 0;
         int right = n-1;
-
         int lb = n;
-
         while(left <= right){
-
             int mid = (left+right)/2;
-
             if(arr[mid] > x){
                 lb = mid;
                 right = mid-1;
