@@ -1,6 +1,6 @@
 package org.functional.Strings;
 
-public class StringQuestions {
+public class StringChatGPTQuestions {
     // ANSI escape code constants for text colors
     public static final String BLUE = "\u001B[34m";
     public static final String CYAN = "\u001B[36m";
@@ -43,6 +43,11 @@ public class StringQuestions {
         String str = "Hello World";
         System.out.println(YELLOW + "Original String: " + str);
         // Solution here
+        String rev = "";
+        for (int i = str.length() - 1; i >= 0; i--) {
+            rev = rev + str.charAt(i);
+        }
+        System.out.println(CYAN + "Output String: " + rev);
         System.out.println(WHITE + "************************************************************************-------------");
         System.out.println();
     }
@@ -54,6 +59,41 @@ public class StringQuestions {
         String str = "madam";
         System.out.println(YELLOW + "String to check: " + str);
         // Solution here
+        String rev = "";
+        for (int i = str.length() - 1; i >= 0; i--) {
+            rev = rev + str.charAt(i);
+        }
+        if (str.equals(rev)) {
+            System.out.println(CYAN + "Provided String " + str + " is Palindrome !");
+        } else {
+            System.out.println(CYAN + "Provided String " + str + " is not Palindrome !");
+        }
+        System.out.println(GREEN + "============================ SECOND WAY TO SOLVE ======================================");
+
+        int left = 0;
+        int right = str.length() - 1;
+        boolean isPallindrome = true;
+        while (left < right) {
+            char l = str.charAt(left);
+            char r = str.charAt(right);
+            if (!Character.isLetterOrDigit(l)) {
+                left++;
+            } else if (!Character.isLetterOrDigit(r)) {
+                right--;
+            } else if (Character.isLowerCase(l) != Character.isLowerCase(r)) {
+                isPallindrome = false;
+            } else {
+                left++;
+                right--;
+            }
+        }
+        if (isPallindrome) {
+            System.out.println(CYAN + "Provided String " + str + " is Palindrome !");
+
+        } else {
+            System.out.println(MAGENTA + "Provided String " + str + "  is not Palindrome !");
+        }
+        System.out.println(GREEN + "============================ SECOND WAY TO SOLVE ======================================");
         System.out.println(WHITE + "************************************************************************-------------");
         System.out.println();
     }
@@ -65,6 +105,21 @@ public class StringQuestions {
         String str = "swiss";
         System.out.println(YELLOW + "String: " + str);
         // Solution here
+        char notRepeated = 0;
+        for(int i=0;i<str.length();i++){
+            boolean isRepeated = false;
+            for(int j=0;j<str.length();j++){
+                if(i != j && str.charAt(i) == str.charAt(j)){
+                isRepeated = true;
+                    break;
+                }
+            }
+            if(!isRepeated){
+                System.out.println(CYAN+"Not Repeated char is => " + str.charAt(i));
+                notRepeated = str.charAt(i);
+            }
+        }
+        System.out.println(CYAN+"Not Repeated char is => " + String.valueOf(notRepeated));
         System.out.println(WHITE + "************************************************************************-------------");
         System.out.println();
     }
@@ -76,6 +131,18 @@ public class StringQuestions {
         String str = "Programming";
         System.out.println(YELLOW + "String: " + str);
         // Solution here
+        int vowels = 0;
+        int consonants = 0;
+      str =  str.toLowerCase();
+        for(int i = 0; i< str.length(); i++){
+            //char ch = str.charAt(i);
+            if(str.charAt(i) == 'a' || str.charAt(i) == 'e' || str.charAt(i) == 'i' || str.charAt(i) == 'o'  || str.charAt(i) == 'u' ){
+                vowels++;
+            }else if (str.charAt(i) >= 'a' && str.charAt(i) <= 'z'){
+                consonants++;
+            }
+        }
+        System.out.println(CYAN+"Count of Vowels => " + vowels +" \n & Consonants => "+consonants);
         System.out.println(WHITE + "************************************************************************-------------");
         System.out.println();
     }

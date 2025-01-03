@@ -1,4 +1,4 @@
-package org.functional.String;
+package org.functional.Strings;
 
 import java.util.Scanner;
 
