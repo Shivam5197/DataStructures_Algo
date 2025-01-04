@@ -156,6 +156,27 @@ public class StringChatGPTQuestions {
         System.out.println(YELLOW + "String 1: " + str1);
         System.out.println(YELLOW + "String 2: " + str2);
         // Solution here
+        int arr[] = new int[26];
+        boolean isAnagram = true;
+        if(str1.length() != str2.length()){
+            isAnagram = false;
+        }
+// solution followed - LeetCode 242. Valid Anagram Solution Explained - Java   by  Engineering Digest
+        for(int i=0;i<str1.length();i++){
+            arr[str1.charAt(i) - 'a']++;
+        }
+        for(int i=0;i<str2.length();i++){
+            arr[str2.charAt(i) - 'a']--;
+            if( arr[str2.charAt(i) - 'a'] < 0){
+                isAnagram = false;
+            }
+        }
+        if(isAnagram){
+            System.out.println(CYAN+"String" +str1 + " & " + str2 +" are anagrams ");
+        }else {
+            System.out.println(CYAN+"String" +str1 + " & " + str2 +" are not anagrams ");
+        }
+
         System.out.println(WHITE + "************************************************************************-------------");
         System.out.println();
     }
@@ -167,6 +188,19 @@ public class StringChatGPTQuestions {
         String str = "Java Programming Language";
         System.out.println(YELLOW + "Original String: " + str);
         // Solution here
+        int index = 0;
+        char arr[] = new char[str.length()];
+        for(int i=0;i<str.length();i++){
+            if(str.charAt(i) != ' '){
+                arr[index] = str.charAt(i);
+                index++;
+            }
+        }
+//        for(int i=0;i<arr.length;i++){
+//            System.out.print(arr[i]);
+//        }
+        System.out.println(CYAN + String.valueOf(arr));
+
         System.out.println(WHITE + "************************************************************************-------------");
         System.out.println();
     }
@@ -178,6 +212,7 @@ public class StringChatGPTQuestions {
         String str = "success";
         System.out.println(YELLOW + "String: " + str);
         // Solution here
+
         System.out.println(WHITE + "************************************************************************-------------");
         System.out.println();
     }
