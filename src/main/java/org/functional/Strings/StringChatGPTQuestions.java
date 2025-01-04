@@ -200,7 +200,6 @@ public class StringChatGPTQuestions {
 //            System.out.print(arr[i]);
 //        }
         System.out.println(CYAN + String.valueOf(arr));
-
         System.out.println(WHITE + "************************************************************************-------------");
         System.out.println();
     }
