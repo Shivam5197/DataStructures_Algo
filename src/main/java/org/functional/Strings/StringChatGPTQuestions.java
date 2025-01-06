@@ -1,5 +1,7 @@
 package org.functional.Strings;
 
+import java.util.Arrays;
+
 public class StringChatGPTQuestions {
     // ANSI escape code constants for text colors
     public static final String BLUE = "\u001B[34m";
@@ -223,6 +225,9 @@ public class StringChatGPTQuestions {
         String str = "java programming language";
         System.out.println(YELLOW + "Original String: " + str);
         // Solution here
+     str.toLowerCase().replace()
+
+
         System.out.println(WHITE + "************************************************************************-------------");
         System.out.println();
     }
@@ -305,6 +310,7 @@ public class StringChatGPTQuestions {
         System.out.println(WHITE + "************************************************************************-------------");
         System.out.println();
     }
+
 
     // 16. Check if a String Contains Only Digits
     static void checkIfStringContainsOnlyDigits() {
