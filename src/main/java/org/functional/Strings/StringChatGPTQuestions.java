@@ -225,7 +225,7 @@ public class StringChatGPTQuestions {
             response.put(c, response.getOrDefault(c, 0) + 1);
         }
 
-        //Print result
+        //Print results
         for (Map.Entry<Character, Integer> entry : response.entrySet()) {
             System.out.println(CYAN+""+entry.getKey() + ": "+ GREEN + entry.getValue());
         }
