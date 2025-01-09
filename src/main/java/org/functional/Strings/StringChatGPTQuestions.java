@@ -224,13 +224,10 @@ public class StringChatGPTQuestions {
         for (char c : s.toCharArray()) {
             response.put(c, response.getOrDefault(c, 0) + 1);
         }
-
         //Print results
         for (Map.Entry<Character, Integer> entry : response.entrySet()) {
             System.out.println(CYAN+""+entry.getKey() + ": "+ GREEN + entry.getValue());
         }
-
-
 
         System.out.println(WHITE + "************************************************************************");
         System.out.println();
@@ -240,6 +237,19 @@ public class StringChatGPTQuestions {
         System.out.println(WHITE + "************************************************************************");
         System.out.println(RED + "7. Replace All Spaces in a String with '%20'");
         // Your code here
+          String  Input=     "Mr John Smith";
+        StringBuilder st = new StringBuilder();
+        String Rep = "%20";
+        for(int i=0;i<Input.length();i++){
+            if(Input.charAt(i) == ' ' ){
+                st.append(Rep);
+            }else{
+                st.append(Input.charAt(i));
+            }
+
+
+        }
+        System.out.println(CYAN+" String "+Input+ " After replaced Space with %20 is => "  + st);
         System.out.println(WHITE + "************************************************************************");
         System.out.println();
     }
@@ -248,6 +258,8 @@ public class StringChatGPTQuestions {
         System.out.println(WHITE + "************************************************************************");
         System.out.println(RED + "8. Remove All Occurrences of a Given Character from a String");
         // Your code here
+
+
         System.out.println(WHITE + "************************************************************************");
         System.out.println();
     }

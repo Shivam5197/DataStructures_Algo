@@ -14,13 +14,10 @@ public class SecondLargestElement {
     static void secondLargestElement( Integer[] arr) {
         System.out.println(TerminalColors.WHITE + "************************************************************************");
         System.out.println(TerminalColors.BLUE + "Find the Second Largest Element:");
-
-
         int max = arr[0];
         int secondMax = Integer.MIN_VALUE;
         int temp = 0;
         for (int i = 0; i < arr.length; i++) {
-
             if (arr[i] > max) {
                 max = arr[i];
             }

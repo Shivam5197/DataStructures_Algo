@@ -1,18 +1,36 @@
 package org.functional;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class OnlineCompilerTestsHere {
 
     public static void main(String[] args) {
-
+        String str =  "hqyisjastsjxpuoscndtxvifoamcxabtbqnwfkxmbtrrqfb";
 //        System.out.println( "Second Largest is =>   "+secondLargest());
+//        List<String> names = Arrays.asList("Geek", "Geeks", "Geeksfor", "GeeksforGeek", "GeeksforGeeks");
 
-        System.out.println("Remove Dupicates is = > " + remove_duplicate());
+        System.out.println(Sandwiched_Vowel(str));
+
+     //   System.out.println("Remove Dupicates is = > " + remove_duplicate());
     }
 
+    public static String Sandwiched_Vowel(String str)
+    {
+        // Complete function
+        StringBuilder st = new StringBuilder();
 
+        for(int i=0;i<str.length();i++){
+
+            if(str.charAt(i) != 'a' && str.charAt(i) != 'e' && str.charAt(i) != 'i'
+                    && str.charAt(i) != 'o' && str.charAt(i) != 'u' ){
+
+                st.append(str.charAt(i));
+            }
+        }
+        return st.toString();
+    }
 
     static int secondLargest(){
 
@@ -66,5 +84,19 @@ public class OnlineCompilerTestsHere {
         return newint.size();
     }
 
+
+    public static String longest(List<String> names) {
+        // code here
+        int size =names.get(0).length();
+        String str = "";
+        StringBuilder st = new StringBuilder();
+        for(int i =0 ;i < names.size();i++){
+            if(names.get(i).length() > str.length()){
+                str = names.get(i);
+            }
+
+        }
+        return str;
+    }
 
 }
