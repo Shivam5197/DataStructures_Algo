@@ -7,15 +7,38 @@ import java.util.List;
 public class OnlineCompilerTestsHere {
 
     public static void main(String[] args) {
-        String str =  "hqyisjastsjxpuoscndtxvifoamcxabtbqnwfkxmbtrrqfb";
+        String str =  "vbupfqqgnaevilznuaxtqlitkfxnxbv";
 //        System.out.println( "Second Largest is =>   "+secondLargest());
 //        List<String> names = Arrays.asList("Geek", "Geeks", "Geeksfor", "GeeksforGeek", "GeeksforGeeks");
 
-        System.out.println(Sandwiched_Vowel(str));
+        System.out.println(fakePRofile(str));
 
      //   System.out.println("Remove Dupicates is = > " + remove_duplicate());
     }
 
+    public static  String  fakePRofile(String a)
+    {
+        //code here
+        System.out.println(a.length());
+        int count=0;
+        for(int i=0;i<a.length();i++){
+            if ( a.charAt(i) != 'a' && a.charAt(i) != 'e'
+                    && a.charAt(i) != 'i'  && a.charAt(i) != 'o'  && a.charAt(i) != 'u'   ){
+                count++;
+            }
+        }
+        System.out.println(
+                count
+        );
+        if(count % 2 !=0){
+            return "HE!";
+        }else{
+            return "SHE!";
+        }
+
+    }
+    
+    
     public static String Sandwiched_Vowel(String str)
     {
         // Complete function

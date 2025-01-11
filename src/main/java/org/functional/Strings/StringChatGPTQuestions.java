@@ -258,8 +258,17 @@ public class StringChatGPTQuestions {
         System.out.println(WHITE + "************************************************************************");
         System.out.println(RED + "8. Remove All Occurrences of a Given Character from a String");
         // Your code here
+        String str = "Hi My Name is Shivam Sharma";
+        char ch = 'h';
+        str =  str.toLowerCase();
+        StringBuilder stb = new StringBuilder();
 
-
+        for(int i = 0 ; i <str.length();i++){
+            if(str.charAt(i) != ch){
+                stb.append(str.charAt(i));
+            }
+        }
+        System.out.println(CYAN+" The Output after removing the Occurrences is => " + stb.toString());
         System.out.println(WHITE + "************************************************************************");
         System.out.println();
     }
@@ -268,6 +277,7 @@ public class StringChatGPTQuestions {
         System.out.println(WHITE + "************************************************************************");
         System.out.println(RED + "9. Check if a String Contains Only Digits");
         // Your code here
+
         System.out.println(WHITE + "************************************************************************");
         System.out.println();
     }
