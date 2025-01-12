@@ -1,8 +1,6 @@
 package org.functional;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class OnlineCompilerTestsHere {
 
@@ -10,11 +8,27 @@ public class OnlineCompilerTestsHere {
         String str =  "vbupfqqgnaevilznuaxtqlitkfxnxbv";
 //        System.out.println( "Second Largest is =>   "+secondLargest());
 //        List<String> names = Arrays.asList("Geek", "Geeks", "Geeksfor", "GeeksforGeek", "GeeksforGeeks");
-
-        System.out.println(fakePRofile(str));
+        String s = "abcd";
+        String t = "abcde";
+        System.out.println(findTheDifference(s,t));
 
      //   System.out.println("Remove Dupicates is = > " + remove_duplicate());
     }
+
+    public static char findTheDifference(String s, String t) {
+     // Using ASCI Values to get the missing char
+        int sumS = 0;
+        int sumT = 0;
+        for(int i=0;i<s.length();i++){
+            sumS += s.charAt(i);
+        }
+        for(int i=0;i<t.length();i++){
+            sumT += t.charAt(i);
+        }
+
+        return (char) (sumT-sumS);
+    }
+
 
     public static  String  fakePRofile(String a)
     {
