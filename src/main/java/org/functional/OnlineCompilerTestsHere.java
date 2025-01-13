@@ -5,15 +5,34 @@ import java.util.*;
 public class OnlineCompilerTestsHere {
 
     public static void main(String[] args) {
-        String str =  "vbupfqqgnaevilznuaxtqlitkfxnxbv";
+        String  str = "the sky is blue";
 //        System.out.println( "Second Largest is =>   "+secondLargest());
 //        List<String> names = Arrays.asList("Geek", "Geeks", "Geeksfor", "GeeksforGeek", "GeeksforGeeks");
         String s = "abcd";
         String t = "abcde";
-        System.out.println(findTheDifference(s,t));
+        System.out.println(reverseWords(str));
 
      //   System.out.println("Remove Dupicates is = > " + remove_duplicate());
     }
+
+
+
+    public static String reverseWords(String str) {
+
+//        String st[] = str.trim().split("\\s+"); // Trim and split on multiple spaces
+        String st[] = str.split(" ");
+        String rv = "";
+
+        for(int i=0;i<st.length;i++){
+            System.out.println(st[i]);
+        }
+
+        for(int i=st.length-1;i>=0;i--){
+            rv = rv+st[i]+" ";
+        }
+        return rv;
+    }
+
 
     public static char findTheDifference(String s, String t) {
      // Using ASCI Values to get the missing char
@@ -28,7 +47,6 @@ public class OnlineCompilerTestsHere {
 
         return (char) (sumT-sumS);
     }
-
 
     public static  String  fakePRofile(String a)
     {

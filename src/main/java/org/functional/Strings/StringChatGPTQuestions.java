@@ -277,7 +277,16 @@ public class StringChatGPTQuestions {
         System.out.println(WHITE + "************************************************************************");
         System.out.println(RED + "9. Check if a String Contains Only Digits");
         // Your code here
+        String s1 = "123456";
+        String s2 = "Abc1245";
 
+        for(Character c: s1.toCharArray()){
+            if(!Character.isDigit(c)){
+                System.out.println(CYAN+" String "+s1+" only contains Digits !");
+            }else{
+                System.out.println(YELLOW+" String "+s1+" Not only contains Digits !");
+            }
+        }
         System.out.println(WHITE + "************************************************************************");
         System.out.println();
     }
@@ -286,6 +295,22 @@ public class StringChatGPTQuestions {
         System.out.println(WHITE + "************************************************************************");
         System.out.println(RED + "10. Reverse Each Word in a String");
         // Your code here
+        String str = "Java Programming";
+        String st[] = str.split(" ");
+        String rv = "";
+
+        for(int i=0;i<st.length;i++){
+            String word = st[i];
+            String revWord = "";
+            for(int j = word.length()-1;j>=0;j--){
+                revWord = revWord+ word.charAt(j);
+            }
+            rv = rv + revWord;
+            if (i < st.length - 1) {
+                rv += " ";
+            }
+        }
+        System.out.println(CYAN+"Reversed words are => " + rv);
         System.out.println(WHITE + "************************************************************************");
         System.out.println();
     }
@@ -295,6 +320,14 @@ public class StringChatGPTQuestions {
         System.out.println(WHITE + "************************************************************************");
         System.out.println(RED + "11. Find the Longest Substring Without Repeating Characters");
         // Your code here
+        String str = "geeksforgeeks";
+
+        Set<Character> s = new HashSet<>();
+        for(int i=0;i<str.length();i++){
+            s.add(str.charAt(i));
+        }
+
+        System.out.println(CYAN+"Longest String without repeating characters are =>" + s.size());
         System.out.println(WHITE + "************************************************************************");
         System.out.println();
     }
