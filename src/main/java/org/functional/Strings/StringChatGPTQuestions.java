@@ -336,6 +336,27 @@ public class StringChatGPTQuestions {
         System.out.println(WHITE + "************************************************************************");
         System.out.println(RED + "12. Check if Two Strings are Anagrams");
         // Your code here
+        String str1= "shivam";
+        String str2 = "vamshi";
+
+        if(str1.length() != str2.length()){
+            System.out.println("Not Anagrams !");
+        }
+     //   StringBuilder st = new StringBuilder(str1);
+        Set<Character> set = new HashSet<>();
+        for (char c : str1.toCharArray()){
+            set.add(c);
+        }
+        for(int i=0;i<str2.length();i++){
+            if(set.contains(str2.charAt(i))){
+                set.remove(str2.charAt(i));
+            }
+        }
+        if(set.isEmpty()){
+            System.out.println("Anagrams ");
+        }else{
+            System.out.println("Not Anagrams");
+        }
         System.out.println(WHITE + "************************************************************************");
         System.out.println();
     }
@@ -344,6 +365,22 @@ public class StringChatGPTQuestions {
         System.out.println(WHITE + "************************************************************************");
         System.out.println(RED + "13. Find the First Non-Repeating Character in a String");
         // Your code here
+        String str = "This is a Non repeting checketer test";
+        char notRepeated = '$';
+        for(int i=0;i<str.length();i++){
+            boolean isRepeted = false;
+            for(int j=0;j<str.length();j++){
+                if(i != j && str.charAt(i) == str.charAt(j)){
+                    isRepeted = true;
+                    break;
+                }
+            }
+            if(!isRepeted){
+                System.out.println("Non repteting charcter is =>" + str.charAt(i));
+            }
+            System.out.println("No non repeting char found");
+        }
+
         System.out.println(WHITE + "************************************************************************");
         System.out.println();
     }
@@ -352,6 +389,8 @@ public class StringChatGPTQuestions {
         System.out.println(WHITE + "************************************************************************");
         System.out.println(RED + "14. Count the Occurrences of a Substring in a String");
         // Your code here
+
+
         System.out.println(WHITE + "************************************************************************");
         System.out.println();
     }

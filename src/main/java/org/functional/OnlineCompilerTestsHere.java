@@ -8,14 +8,22 @@ public class OnlineCompilerTestsHere {
         String  str = "the sky is blue";
 //        System.out.println( "Second Largest is =>   "+secondLargest());
 //        List<String> names = Arrays.asList("Geek", "Geeks", "Geeksfor", "GeeksforGeek", "GeeksforGeeks");
-        String s = "abcd";
-        String t = "abcde";
-        System.out.println(reverseWords(str));
+  //      String s = "abcd";
+   //     String t = "abcde";
+        int arr[] = {1, 2, 3, 4};
+        System.out.println(arraySum(arr));
 
      //   System.out.println("Remove Dupicates is = > " + remove_duplicate());
     }
 
+    static int arraySum(int arr[]) {
+        // code here
 
+
+        int sum = Arrays.stream(arr).sum();
+
+      return sum;
+    }
 
     public static String reverseWords(String str) {
 
