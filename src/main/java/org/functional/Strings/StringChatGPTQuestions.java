@@ -389,6 +389,10 @@ public class StringChatGPTQuestions {
         System.out.println(WHITE + "************************************************************************");
         System.out.println(RED + "14. Count the Occurrences of a Substring in a String");
         // Your code here
+        String str = "hello hello world";
+        String subStr = "hello";
+
+
 
 
         System.out.println(WHITE + "************************************************************************");
