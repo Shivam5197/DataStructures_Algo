@@ -5,16 +5,60 @@ import java.util.*;
 public class OnlineCompilerTestsHere {
 
     public static void main(String[] args) {
-        String  str = "the sky is blue";
+        String  str = "theskyisblue";
+
 //        System.out.println( "Second Largest is =>   "+secondLargest());
 //        List<String> names = Arrays.asList("Geek", "Geeks", "Geeksfor", "GeeksforGeek", "GeeksforGeeks");
   //      String s = "abcd";
    //     String t = "abcde";
-        int arr[] = {1, 2, 3, 4};
-        System.out.println(arraySum(arr));
+        int arr[] = {2, 3, 2, 3, 5};
+        System.out.println(frequencyCount(arr).toString());
 
      //   System.out.println("Remove Dupicates is = > " + remove_duplicate());
     }
+
+
+    public static int countOfCharactersUsingHashIng(String s,char c){
+        int count = 0;
+        int hash[] = new int[26];
+        s = s.toLowerCase(); // Normalize to lowercase
+        c = Character.toLowerCase(c);
+        for(int i=0;i<s.length();i++){
+            hash[s.charAt(i) - 'a']++;
+        }
+        count = hash[c-'a'];
+        return count;
+    }
+
+    public static List<Integer> frequencyCount(int[] arr) {
+        // do modify in the given array
+        List<Integer> ls = new ArrayList<>();
+        Map<Integer,Integer> mpp = new HashMap<>();
+        for(int i=0;i<arr.length;i++){
+            mpp.put(arr[i],mpp.getOrDefault(arr[i],0)+1);
+        }
+
+        for(int i=1;i<arr.length+1;i++){
+            ls.add(mpp.getOrDefault(i,0));
+        }
+
+        return ls;
+    }
+
+
+    public static int countOfCharactersUsingHashMap(String s,char c){
+        int count = 0;
+      Map<Character,Integer> mpp= new HashMap<>();
+        s = s.toLowerCase(); // Normalize to lowercase
+        c = Character.toLowerCase(c);
+        for(int i=0;i<s.length();i++){
+            mpp.put(s.charAt(i),mpp.getOrDefault(s.charAt(i) ,0 )+1);
+        }
+
+
+        return mpp.getOrDefault(c,0);
+    }
+
 
     public int romanToInt(String s) {
         Map<Character,Integer> map = new HashMap<Character, Integer>();
@@ -37,6 +81,10 @@ public class OnlineCompilerTestsHere {
         }
         return sum;
     }
+
+
+
+
     static int arraySum(int arr[]) {
         // code here
 
