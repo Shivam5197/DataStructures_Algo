@@ -389,9 +389,22 @@ public class StringChatGPTQuestions {
         System.out.println(WHITE + "************************************************************************");
         System.out.println(RED + "14. Count the Occurrences of a Substring in a String");
         // Your code here
-        String str = "hello hello world";
-        String subStr = "hello";
+        String str = "abcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabc";
+        String subStr = "abc";
+        // Count occurrences of the substring
+        int count = 0;
+        int index = 0;
 
+        // Use a loop to find all occurrences of the substring
+        while ((index = str.indexOf(subStr, index)) != -1) {
+            count++;
+            index += subStr.length(); // Move the index forward to avoid counting overlapping occurrences
+        }
+
+        // Output the result
+        System.out.println("String: " + str);
+        System.out.println("Substring: " + subStr);
+        System.out.println("Occurrences: " + count);
 
 
 
