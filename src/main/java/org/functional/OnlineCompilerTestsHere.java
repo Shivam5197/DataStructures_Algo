@@ -11,8 +11,8 @@ public class OnlineCompilerTestsHere {
 //        List<String> names = Arrays.asList("Geek", "Geeks", "Geeksfor", "GeeksforGeek", "GeeksforGeeks");
   //      String s = "abcd";
    //     String t = "abcde";
-        int arr[] = {3,1,2};
-        System.out.println(subsets(arr).toString());
+        int arr[] = {3,1,2,3,6,2,5,6,1,7,1,5,2,9,1};
+        printSubSequences(arr,10);
 
      //   System.out.println("Remove Dupicates is = > " + remove_duplicate());
     }
@@ -21,27 +21,71 @@ public class OnlineCompilerTestsHere {
         // code here
         List<Integer> list = new ArrayList<>();
 
-         checkList(list,N,arr,K,0);
+       return  checkList(list,N,arr,K,0,0);
 
-        if(!list.isEmpty()){
-            return true;
-        }
-        return false;
-    }
-
-    public static void checkList(List<Integer> list,int N, int[] arr, int K,int index){
-
-        if(index >= N){
-            if()
-        }
 
     }
 
+    public static boolean checkList(List<Integer> list,int N, int[] arr, int K,int index,int sum){
 
+        System.out.println("Values of index => "+ index +" Values of sum => "+ sum);
+        if(index == N) {
+                return sum ==K;
+        }
+
+        list.add(arr[index]);
+        if (checkList(list, N, arr, K, index + 1, sum + arr[index])) {
+            return true;  // If we find a valid subsequence, return true
+        }
+        list.remove(list.size()-1);
+       return checkList(list,N,arr,K,index+1,sum);
 
 
 }
 
+    //1498. Number of Subsequences That Satisfy the Given Sum Condition
+    public static int numSubseq(int[] nums, int target) {
+
+        List<Integer> list = new ArrayList<>();
+
+        return  numSubseqTest(list, nums,target,0,0);
+    }
+    static int numSubseqTest(List<Integer> list, int arr[], int target , int index , int sum ){
+
+        if(index == arr.length){
+            if(sum == target){
+               return  list.size();
+            }
+
+        }
+
+        list.add(arr[index]);
+        numSubseqTest(list,arr,target,index+1,sum+arr[index]);
+        list.removeLast();
+    return        numSubseqTest(list,arr,target,index+1,sum);
+
+    }
+
+
+    static void printSubSequences (int arr[] , int target){
+        List<Integer> list = new ArrayList<>();
+        printSubsequencePrinter(list,arr, target,0,0);
+        System.out.println("The size is => " + list.size());
+    }
+
+    static void   printSubsequencePrinter(List<Integer>list,int arr[] , int target,int index,int sum){
+
+        if(index >= arr.length){
+            if(sum == target){
+                System.out.println(list.toString());
+            }
+            return;
+        }
+        list.add(arr[index]);
+        printSubsequencePrinter(list,arr,target,index+1,sum + arr[index]);
+        list.removeLast();
+        printSubsequencePrinter(list,arr,target,index+1,sum );
+    }
 
     public static List<List<Integer>> subsets(int[] nums) {
         List<Integer> list = new ArrayList<>();
@@ -49,7 +93,7 @@ public class OnlineCompilerTestsHere {
         printSubsequence(0,list,nums,listOfList);
         return listOfList;
     }
-   static void printSubsequence(int index, List<Integer> list, int[]nums , List<List<Integer>> listOfList){
+        static void printSubsequence(int index, List<Integer> list, int[]nums , List<List<Integer>> listOfList){
 
       if(index >= nums.length){
           listOfList.add(new ArrayList<>(list));
