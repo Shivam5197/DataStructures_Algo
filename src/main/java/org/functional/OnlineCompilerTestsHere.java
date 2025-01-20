@@ -78,6 +78,7 @@ public class OnlineCompilerTestsHere {
         if(index >= arr.length){
             if(sum == target){
                 System.out.println(list.toString());
+
             }
             return;
         }
