@@ -416,6 +416,9 @@ public class StringChatGPTQuestions {
         System.out.println(WHITE + "************************************************************************");
         System.out.println(RED + "15. Find the Longest Palindrome Substring in a String");
         // Your code here
+
+
+
         System.out.println(WHITE + "************************************************************************");
         System.out.println();
     }

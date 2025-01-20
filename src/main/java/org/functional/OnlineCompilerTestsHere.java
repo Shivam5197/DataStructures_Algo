@@ -11,11 +11,56 @@ public class OnlineCompilerTestsHere {
 //        List<String> names = Arrays.asList("Geek", "Geeks", "Geeksfor", "GeeksforGeek", "GeeksforGeeks");
   //      String s = "abcd";
    //     String t = "abcde";
-        int arr[] = {2, 3, 2, 3, 5};
-        System.out.println(frequencyCount(arr).toString());
+        int arr[] = {3,1,2};
+        System.out.println(subsets(arr).toString());
 
      //   System.out.println("Remove Dupicates is = > " + remove_duplicate());
     }
+
+    public static boolean checkSubsequenceSum(int N, int[] arr, int K) {
+        // code here
+        List<Integer> list = new ArrayList<>();
+
+         checkList(list,N,arr,K,0);
+
+        if(!list.isEmpty()){
+            return true;
+        }
+        return false;
+    }
+
+    public static void checkList(List<Integer> list,int N, int[] arr, int K,int index){
+
+        if(index >= N){
+            if()
+        }
+
+    }
+
+
+
+
+}
+
+
+    public static List<List<Integer>> subsets(int[] nums) {
+        List<Integer> list = new ArrayList<>();
+        List<List<Integer>> listOfList = new ArrayList<>();
+        printSubsequence(0,list,nums,listOfList);
+        return listOfList;
+    }
+   static void printSubsequence(int index, List<Integer> list, int[]nums , List<List<Integer>> listOfList){
+
+      if(index >= nums.length){
+          listOfList.add(new ArrayList<>(list));
+          return;
+      }
+      list.add(nums[index]);
+      printSubsequence(index+1,list,nums,listOfList);
+       list.removeLast();
+       printSubsequence(index+1,list,nums,listOfList);
+   }
+
 
 
     public static int countOfCharactersUsingHashIng(String s,char c){
