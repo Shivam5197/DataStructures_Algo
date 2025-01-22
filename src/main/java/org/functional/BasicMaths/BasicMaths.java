@@ -15,7 +15,7 @@ public class BasicMaths {
 		Integer i = sc.nextInt();
 		sc.close();
 		i = 220;
-	   int j= 1101;
+	   int j = 1101;
 		//optimizedDivisoners(i);
 		System.out.println("Output is: " + gcdANDhcfBruteForce(i,j));
 		System.out.println("Output is: " + gcdANDhcfEculodeanAlgo(i,j));
