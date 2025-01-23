@@ -1,24 +1,23 @@
 package org.functional.BasicMaths;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class BasicMaths {
 
 	public static void main(String[] args) {
 
-		Scanner sc = new Scanner(System.in);
+//		Scanner sc = new Scanner(System.in);
 
 		System.out.println(" Please Enter the Number: ");
-		Integer i = sc.nextInt();
-		sc.close();
-		i = 220;
+	//	Integer i = sc.nextInt();
+//		sc.close();
+	//	i = 220;
 	   int j = 1101;
+		int arr[] = {3, 1, 3, 3, 2};
+		System.out.println(majorityElement(arr));
 		//optimizedDivisoners(i);
-		System.out.println("Output is: " + gcdANDhcfBruteForce(i,j));
-		System.out.println("Output is: " + gcdANDhcfEculodeanAlgo(i,j));
+//		System.out.println("Output is: " + gcdANDhcfBruteForce(i,j));
+//		System.out.println("Output is: " + gcdANDhcfEculodeanAlgo(i,j));
 	}
 
 	public static void extortionOfNumbers(int num) {
@@ -205,8 +204,66 @@ public class BasicMaths {
     	
     	return a;
     }
-    
-	
-	
-	
+
+
+//	Majority Element
+//Given an array arr. Find the majority element in the array. If no majority exists, return -1.
+//	A majority element in an array is an element that appears strictly more than arr.size()/2 times in the array.
+//	static int majorityElement(int arr[]) {
+//		// your code here
+//		int ans = 0;
+//		if(arr.length == 1){
+//			return arr[0];
+//		}
+//		if(arr.length<=2 && arr[0] != arr[1]){
+//			return -1;
+//		}
+//		for(int i=0;i<arr.length;i++){
+//			int count = 0;
+//
+//			for(int j=0;j<arr.length;j++){
+//				if(arr[i] == arr[j] && j != i){
+//					count++;
+//					if(arr.length /2 <= count){
+//						ans = arr[i];
+//					}else{
+//						ans = -1;
+//					}
+//				}
+//			}
+//
+//		}
+//
+//		return ans;
+//	}
+
+	static int majorityElement(int arr[]) {
+		// your code here
+		int count = 0;
+		int elm = arr[0];
+		int n = arr.length;
+
+		for(int i=0;i<n;i++){
+			if(count ==0){
+				count =1;
+				elm = arr[i];
+			} else if(arr[i] == elm){
+				count++;
+			}else{
+				count--;
+			}
+		}
+		int count1 =0;
+		for(int i=0;i<n;i++){
+			if(arr[i] == elm){
+				count1++;
+			}
+		}
+		if(count1 > n/2){
+			return elm;
+		}
+
+		return -1;
+
+	}
 }
