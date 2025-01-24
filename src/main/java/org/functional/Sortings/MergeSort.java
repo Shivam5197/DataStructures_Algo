@@ -84,6 +84,7 @@ public class MergeSort {
             left++;
         }
 
+
         // Copy the remaining elements from the right half, if any
         while (right <= lastIndex) {
             temp.add(arr[right]);
