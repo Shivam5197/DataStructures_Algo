@@ -15,4 +15,12 @@ public class BasicNode {
         this.data = data;
         this.next = null;
     }
+
+    @Override
+    public String toString() {
+        return "BasicNode{" +
+                "data=" + data +
+                ", next=" + next +
+                '}';
+    }
 }
