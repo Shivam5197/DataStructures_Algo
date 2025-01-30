@@ -1,6 +1,6 @@
-package org.functional.LinkedList;
+package org.functional.LinkedList.SingleLinkedList;
 
-import static org.functional.LinkedList.CountOfLinkedList.convertArrayToLL;
+import static org.functional.LinkedList.SingleLinkedList.CountOfLinkedList.convertArrayToLL;
 
 public class InsertNodes {
 

@@ -1,4 +1,4 @@
-package org.functional.LinkedList;
+package org.functional.LinkedList.SingleLinkedList;
 
 public class CountOfLinkedList {
 
